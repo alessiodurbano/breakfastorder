@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordina la tua colazione</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Ordina la tua colazione</h1>
+        <div class="card">
+            <form id="breakfastForm">
+                <div class="input-field">
+                    <input type="text" id="name" required>
+                    <label for="name">Nome</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="roomNumber" required>
+                    <label for="roomNumber">Numero camera</label>
+                </div>
+                
+                <h3>Scegli gli elementi della colazione:</h3>
+                <div id="breakfastItems" class="product-grid">
+                    <div class="product-card" data-product="Caffè">
+                        <h4>Caffè</h4>
+                    </div>
+                    <div class="product-card" data-product="Tè">
+                        <h4>Tè</h4>
+                    </div>
+                    <div class="product-card" data-product="Succo">
+                        <h4>Succo</h4>
+                    </div>
+                    <div class="product-card" data-product="Croissant">
+                        <h4>Croissant</h4>
+                    </div>
+                    <div class="product-card" data-product="Uova">
+                        <h4>Uova</h4>
+                    </div>
+                    <div class="product-card" data-product="Pancake">
+                        <h4>Pancake</h4>
+                    </div>
+                </div>
+                
+                <div class="input-field custom-select">
+                    <div class="select-selected">Scegli l'orario</div>
+                    <div class="select-items select-hide">
+                        <div data-value="7:00 - 8:00">7:00 - 8:00</div>
+                        <div data-value="8:00 - 9:00">8:00 - 9:00</div>
+                        <div data-value="9:00 - 10:00">9:00 - 10:00</div>
+                    </div>
+                    <input type="hidden" id="timeSlot" name="timeSlot" required>
+                </div>
+                
+                <!-- Aggiungi questo nuovo menu a tendina -->
+                <div class="input-field custom-select">
+                    <div class="select-selected">Dove vuoi consumare la colazione?</div>
+                    <div class="select-items select-hide">
+                        <div data-value="camera">In camera</div>
+                        <div data-value="sala">Sala colazioni</div>
+                    </div>
+                    <input type="hidden" id="breakfastLocation" name="breakfastLocation" required>
+                </div>
+                
+                <button type="submit" class="btn">
+                    <span class="material-icons">send</span>
+                    Ordina
+                </button>
+            </form>
+        </div>
+        
+        <div id="confirmationMessage" class="card" style="display: none;">
+            <span class="material-icons">check_circle</span>
+            <h2>Grazie per il tuo ordine!</h2>
+            <p id="confirmationSubtitle"></p>
+        </div>
+        
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <h2 id="modalProductName"></h2>
+                <div class="quantity-selector">
+                    <button type="button" class="quantity-btn minus">-</button>
+                    <input type="number" id="modalQuantity" value="1" min="1" max="5" class="quantity-input">
+                    <button type="button" class="quantity-btn plus">+</button>
+                </div>
+                <div id="modalOptions" class="modal-options"></div>
+                <button id="modalAddButton" class="btn">Aggiungi</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

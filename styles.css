@@ -1,0 +1,322 @@
+:root {
+    --primary-color: #a5d6a7;
+    --primary-variant: #75a478;
+    --secondary-color: #ffcc80;
+    --background: #f5f5f5;
+    --surface: #ffffff;
+    --error: #ef9a9a;
+    --on-primary: #1b5e20;
+    --on-secondary: #3e2723;
+    --on-background: #37474f;
+    --on-surface: #263238;
+    --on-error: #b71c1c;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--on-background);
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.title {
+    color: var(--on-background);
+    text-align: center;
+    font-weight: 300;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: var(--surface);
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 32px;
+    width: 95%; /* Riduce la larghezza del campo di input */
+    margin-left: auto; /* Centra il campo di input */
+    margin-right: auto;
+}
+
+.input-field input, .input-field select {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    background-color: transparent;
+    transition: all 0.3s;
+    box-sizing: border-box; /* Assicura che il padding non aumenti la larghezza totale */
+}
+
+.input-field label {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    color: #9e9e9e;
+    font-size: 16px;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+.input-field input:focus, .input-field select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.input-field input:focus + label, .input-field input:not(:placeholder-shown) + label,
+.input-field select:focus + label, .input-field select:not(:placeholder-shown) + label {
+    top: -12px;
+    left: 16px;
+    font-size: 12px;
+    background-color: var(--surface);
+    padding: 0 4px;
+    color: var(--primary-color);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.product-card {
+    background-color: var(--surface);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.product-card h4 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--on-surface);
+}
+
+.quantity-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity-btn {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quantity-btn:hover {
+    background-color: var(--primary-variant);
+}
+
+.quantity-input {
+    width: 48px;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    margin: 0 12px;
+    padding: 4px;
+    color: var(--on-surface);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
+    background: var(--primary-color);
+    color: var(--on-primary);
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: var(--primary-variant);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn .material-icons {
+    margin-right: 12px;
+}
+
+#confirmationMessage {
+    background: var(--surface);
+    color: var(--on-surface);
+    text-align: center;
+    margin-top: 32px;
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+#confirmationMessage h2 {
+    margin-top: 0;
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+#confirmationMessage p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+#confirmationMessage .material-icons {
+    font-size: 48px;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.custom-select {
+    position: relative;
+    margin-bottom: 32px;
+    width: 95%; /* Riduce la larghezza del selettore personalizzato */
+    margin-left: auto; /* Centra il selettore personalizzato */
+    margin-right: auto;
+}
+
+.select-selected {
+    background-color: var(--surface);
+    padding: 16px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #9e9e9e;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #9e9e9e transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #9e9e9e transparent;
+    top: 40%;
+}
+
+.select-items {
+    position: absolute;
+    background-color: var(--surface);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border: 2px solid var(--primary-color);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div {
+    padding: 12px 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per quando il select è attivo */
+.custom-select.active .select-selected {
+    border-color: var(--primary-color);
+    border-radius: 12px 12px 0 0;
+    color: var(--on-surface);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: var(--surface);
+    margin: 15% auto;
+    padding: 32px;
+    border-radius: 24px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.modal-options {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-options label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Rimuovi questi stili */
+.radio-group,
+.radio-label,
+.radio-label input[type="radio"],
+.radio-label:has(input[type="radio"]:checked),
+.radio-label span {
+    /* Rimuovi tutti gli stili relativi a questi selettori */
+}
+
+/* Il resto del CSS rimane invariato */
